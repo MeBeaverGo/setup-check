@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello!</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: system-ui, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        background: #fcfcfc;
+        color: #1f2937;
+      }
+
+      main {
+        padding: 3rem;
+      }
+
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: clamp(3rem, 10vw, 6rem);
+      }
+
+      p {
+        margin: 0;
+        font-size: 1.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Hello!</h1>
+      <p id="today"></p>
+    </main>
+
+    <script>
+      const today = new Intl.DateTimeFormat(undefined, {
+        dateStyle: "full",
+      }).format(new Date());
+
+      document.querySelector("#today").textContent = today;
+    </script>
+  </body>
+</html>
